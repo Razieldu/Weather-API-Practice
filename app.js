@@ -21,7 +21,7 @@ app.post("/", function(req, res) {
   const url = "https://api.openweathermap.org/data/2.5/weather?q=" + query + "&appid=" + apiKey + "&units=" + unit
 
   https.get(url, function(response) {
-    console.log();
+    console.log(response.statusCode);
 
     response.on("data", function(data) {
       const weatherData = JSON.parse(data);
